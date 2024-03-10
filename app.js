@@ -19,7 +19,7 @@ app.listen(PORT, () => {
     console.log("Server Listening on PORT:", PORT);
   });
 
-app.post("/svc", (request, response) => {
+app.post("/svp", (request, response) => {
     if (request.body.adresse)
         response.redirect(request.headers.origin + "/form-erreur");
     else{
@@ -28,7 +28,7 @@ app.post("/svc", (request, response) => {
     }
 });
 
-app.post("/status", (request, response) => {
+app.post("/test", (request, response) => {
     if (request.body.adresse)
         response.redirect(request.headers.origin + "/form-erreur");
     else{
