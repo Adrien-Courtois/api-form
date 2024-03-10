@@ -1,5 +1,5 @@
 const express = require('express');
-import serverless from "serverless-http";
+const serverless = require  ("serverless-http");
 
 const bodyParser = require('body-parser');
 const mail = require("./mail");
@@ -14,7 +14,7 @@ app.use(express.urlencoded({
     extended: true
 }));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80;
 
 app.listen(PORT, () => {
     console.log("Server Listening on PORT:", PORT);
@@ -38,4 +38,9 @@ app.post("/test", (request, response) => {
     }
 });
 
-export const handler = serverless(app);
+app.get("/status", (request, response) => {
+    response.send({message: "ok"})
+});
+
+
+// export const handler = serverless(app);
