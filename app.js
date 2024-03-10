@@ -1,4 +1,5 @@
 const express = require('express');
+import serverless from "serverless-http";
 
 const bodyParser = require('body-parser');
 const mail = require("./mail");
@@ -36,3 +37,5 @@ app.post("/test", (request, response) => {
         response.redirect(request.headers.origin + "/form-succes");
     }
 });
+
+export const handler = serverless(app);
