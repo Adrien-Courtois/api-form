@@ -43,4 +43,4 @@ app.get("/status", (request, response) => {
 });
 
 
-// export const handler = serverless(app);
+export const handler = serverless(app);
