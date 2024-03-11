@@ -1,5 +1,4 @@
 const express = require('express');
-const serverless = require  ("serverless-http");
 
 const bodyParser = require('body-parser');
 const mail = require("./mail");
@@ -42,5 +41,3 @@ app.get("/status", (request, response) => {
     response.send({message: "ok"})
 });
 
-
-export const handler = serverless(app);
